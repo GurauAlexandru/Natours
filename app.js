@@ -117,3 +117,6 @@ app.all('*', (req, res, next) => {
 app.use(globalErrorHandler);
 
 module.exports = app;
+
+// This app works but without stripe
+// Maybe in future I'll me it work
