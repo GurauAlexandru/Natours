@@ -47,7 +47,7 @@ exports.signup = catchAsync(async (req, res, next) => {
   });
 
   const url = `${req.protocol}://${req.get('host')}/me`;
-  console.log(url);
+
   // await new Email(newUser, url).sendWelcome(); // email don't WORK
   createSendToken(newUser, 201, res);
 });
@@ -71,7 +71,6 @@ exports.login = catchAsync(async (req, res, next) => {
 });
 
 exports.logout = (req, res) => {
-  console.log('authController function work');
   res.cookie('jwt', 'loggedout', {
     expires: new Date(Date.now() + 10 * 1000),
     httpOnly: true,
